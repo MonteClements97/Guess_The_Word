@@ -19,10 +19,13 @@ def start_up_instructions():
 
 def get_settings():
     try:
+        # here we'll try to get all the users settings
         openfile = open("user_settings.txt", "r")
-        name = openfile.readline()
-        if openfile.readline() == 'y':
+        settings = []
+        settings.append(openfile.readline())
+        if (openfile.readline()) == 'y':
             start_up_instructions()
+        input("Settings have been loaded")
 
     except FileNotFoundError:
         # Settings needs to be created
