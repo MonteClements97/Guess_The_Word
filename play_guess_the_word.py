@@ -8,8 +8,8 @@ def play_guess_the_word(the_word, lives):
             print("You have", lives, "remaining")
             users_guess = input("Enter letter:")
             if not(users_guess.lower() in the_word):
-                print("TO BE IMPLEMENTED")
-                exit(2)
+                print("\"That appears to be wrong! You've lost a life!")
+                lives -= 1
             where_in_the_list = 0
             for letter in the_word:
                 if letter.lower() == users_guess.lower():
